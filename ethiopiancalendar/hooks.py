@@ -36,7 +36,7 @@ app_include_js = [
     "/assets/ethiopiancalendar/js/jquery.calendars.js",
     "/assets/ethiopiancalendar/js/jquery.calendars.plus.js",
     "/assets/ethiopiancalendar/js/ethiopian_calendar.js",
-    "/assets/ethiopiancalendar/js/date_controlss.js"
+    "/assets/ethiopiancalendar/js/date_controlsggggggs.js"
     ]
 
 # boot_session = "ethiopiancalendar.ethiopian_calendar.ethiopian_calendar_configure.boot_session"

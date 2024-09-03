@@ -57,7 +57,7 @@ frappe.ui.form.ControlDate = class CustomControlDate extends frappe.ui.form.Cont
         this.$wrapper.on('click', '.nd_switch_btn', (ev) => {
             ev.preventDefault();
             ev.stopPropagation();
-            this.datepicker_bs = !this.datepicker_bs;
+            this.datepicker_eth = !Boolean(this.datepicker_eth);
             this._toggleDatepicker();
         });
     }
@@ -94,6 +94,7 @@ frappe.ui.form.ControlDate = class CustomControlDate extends frappe.ui.form.Cont
     }
     
     set_formatted_input(value) {
+        console.log(value);
         const spset = super.set_formatted_input(value);
         if (value) {
             const ethDate = this.get_eth_datepicker_format(value);
@@ -103,12 +104,37 @@ frappe.ui.form.ControlDate = class CustomControlDate extends frappe.ui.form.Cont
     }
     
     get_eth_datepicker_format(value) {
-        const gregorianCalendar = $.calendars.instance('gregorian');
-        const ethCalendar = $.calendars.instance('ethiopian');
-        const gregDate = gregorianCalendar.parseDate('dd-mm-yyyy', value);
-        const ethDate = ethCalendar.fromJD(gregDate.toJD());
-        return ethDate.formatDate('dd-mm-yyyy');
+        try {
+            const gregorianCalendar = $.calendars.instance('gregorian');
+            const ethCalendar = $.calendars.instance('ethiopian');
+            console.log(value);
+            // Extract and log date components
+            const [day, month, year] = value.split('-').map(Number);
+            if (isNaN(day) || isNaN(month) || isNaN(year)) {
+                throw new Error('Invalid date components');
+            }
+            console.log('Day:', day, 'Month:', month, 'Year:', year);
+            
+            // Create Gregorian date and log it
+            const gregDate = gregorianCalendar.newDate(year, month, day);
+            console.log('Gregorian Date:', gregDate);
+            
+            // Convert to Julian Day and then Ethiopian date
+            const jd = gregDate.toJD();
+            console.log('Julian Day:', jd);
+            
+            const ethDate = ethCalendar.fromJD(jd);
+            console.log('Ethiopian Date:', ethDate);
+            
+            // Format and return Ethiopian date
+            return ethDate.formatDate('dd-mm-yyyy');
+        } catch (error) {
+            console.error('Error converting date:', error);
+            return null;
+        }
     }
+    
+    
 
     refresh() {
         super.refresh();
