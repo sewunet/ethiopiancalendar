@@ -26,8 +26,23 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/ethiopiancalendar/css/ethiopiancalendar.css"
-# app_include_js = "/assets/ethiopiancalendar/js/ethiopiancalendar.js"
+# app_include_js =  "/assets/ethiopiancalendar/js/eth-date-picker.js"
+app_include_css = ["/assets/ethiopiancalendar/css/ethiopian_calendar.css",
+                   "/assets/ethiopiancalendar/css/switcher.css"]
+# app_include_js = "/assets/ethiopiancalendar/js/datepicker.min.js"
 
+app_include_js = [
+    "/assets/ethiopiancalendar/js/jquery.plugin.js",
+    "/assets/ethiopiancalendar/js/jquery.calendars.js",
+    "/assets/ethiopiancalendar/js/jquery.calendars.plus.js",
+    "/assets/ethiopiancalendar/js/ethiopian_calendar.js",
+    "/assets/ethiopiancalendar/js/date_controlss.js"
+    ]
+
+# boot_session = "ethiopiancalendar.ethiopian_calendar.ethiopian_calendar_configure.boot_session"
+# extend_bootinfo = [
+# 	"ethiopiancalendar.ethiopian_calendar.ethiopian_calendar_configure.bootinfo",
+# ]
 # include js, css files in header of web template
 # web_include_css = "/assets/ethiopiancalendar/css/ethiopiancalendar.css"
 # web_include_js = "/assets/ethiopiancalendar/js/ethiopiancalendar.js"

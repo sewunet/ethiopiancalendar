@@ -1,0 +1,65 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2024-04-03 14:46:24.122816",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+     "ethiopian_date_setting_section",
+     "calendar_type",
+     "ethiopian_date_format",
+     "ethiopian_date_datepicker_format"
+    ],
+    "fields": [
+     {
+      "fieldname": "ethiopian_date_setting_section",
+      "fieldtype": "Section Break",
+      "label": "Ethiopian Date Setting"
+     },
+     {
+        "fieldname": "calendar_type",
+        "fieldtype": "Select",
+        "label": "Calendar type",
+        "options":"ethiopian\ngregorian"
+
+     },
+     {
+      "default": "dd-mm-yyyy",
+      "fieldname": "ethiopian_date_format",
+      "fieldtype": "Select",
+      "label": "Print Format",
+      "options": "dd-mm-yyyy\ndd.mm.yyyy\ndd/mm/yyyy\nmm-dd-yyyy\nmm.dd.yyyy\nmm/dd/yyyy\nyyyy-mm-dd\nyyyy.mm.dd\nyyyy/mm/dd"
+     },
+     {
+      "default": "dd-mm-yyyy",
+      "fieldname": "ethiopian_date_datepicker_format",
+      "fieldtype": "Select",
+      "label": "Datepicker Format",
+      "options": "dd-mm-yyyy\ndd.mm.yyyy\ndd/mm/yyyy\nmm-dd-yyyy\nmm.dd.yyyy\nmm/dd/yyyy\nyyyy-mm-dd\nyyyy.mm.dd\nyyyy/mm/dd"
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "issingle": 1,
+    "links": [],
+    "modified": "2024-04-05 16:46:53.688344",
+    "modified_by": "Administrator",
+    "module": "Ethiopian Calendar",
+    "name": "Ethiopian Date Settings",
+    "owner": "Administrator",
+    "permissions": [
+     {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+     }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+   }
+   
