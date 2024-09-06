@@ -4,14 +4,14 @@
 .nd_datepicker_multi{
 	position: relative;
 }
-.nd_switch_btn{
+.ethd_switch_btn{
 	position: absolute;
     right: 4px;
     top: 0px;
     cursor: pointer;
     z-index: 3;
 }
-.nd_switch_btn::before{
+.ethd_switch_btn::before{
 	font: normal normal normal 14px / 1 FontAwesome;
     content: "\f079";
     display: inline-block;
@@ -23,7 +23,7 @@
     padding-top: 0px !important;
     padding-bottom: 0px !important;
 }
-.nepali_date-conversion{
+.ethiopian_date-conversion{
     font-size: 14px;
 }
 .datatable .dt-row .dt-cell .dt-cell__content > br{

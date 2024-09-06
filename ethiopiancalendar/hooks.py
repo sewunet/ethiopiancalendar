@@ -28,7 +28,7 @@ app_license = "mit"
 # app_include_css = "/assets/ethiopiancalendar/css/ethiopiancalendar.css"
 # app_include_js =  "/assets/ethiopiancalendar/js/eth-date-picker.js"
 app_include_css = ["/assets/ethiopiancalendar/css/ethiopian_calendar.css",
-                   "/assets/ethiopiancalendar/css/switcher.css"]
+                   "/assets/ethiopiancalendar/css/eth_switcher.css"]
 # app_include_js = "/assets/ethiopiancalendar/js/datepicker.min.js"
 
 app_include_js = [
@@ -36,9 +36,9 @@ app_include_js = [
     "/assets/ethiopiancalendar/js/jquery.calendars.js",
     "/assets/ethiopiancalendar/js/jquery.calendars.plus.js",
     "/assets/ethiopiancalendar/js/ethiopian_calendar.js",
-    "/assets/ethiopiancalendar/js/date_controlsggggggs.js"
+    "/assets/ethiopiancalendar/js/ethiopian_date_control.js"
     ]
-
+ 
 # boot_session = "ethiopiancalendar.ethiopian_calendar.ethiopian_calendar_configure.boot_session"
 # extend_bootinfo = [
 # 	"ethiopiancalendar.ethiopian_calendar.ethiopian_calendar_configure.bootinfo",
