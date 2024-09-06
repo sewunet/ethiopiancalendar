@@ -1,4 +1,5 @@
 
+const TYPE_DATE = 'date';
 frappe.ui.form.ControlDate = class CustomControlDate extends frappe.ui.form.ControlDate {
    make_input() {
         this.datepicker_eth = true;
@@ -61,6 +62,7 @@ frappe.ui.form.ControlDate = class CustomControlDate extends frappe.ui.form.Cont
             this.$input.removeClass('hide');
             this.$ethInput.addClass('hide');
         }
+        this._printDateConversion();
     }
     
     bind_events() {
@@ -108,6 +110,7 @@ frappe.ui.form.ControlDate = class CustomControlDate extends frappe.ui.form.Cont
         if (value) {
             const ethDate = this.get_eth_datepicker_format(value);
             this.$ethInput.val(ethDate);
+            this._printDateConversion();
         }
         return spset;
     }
@@ -129,11 +132,38 @@ frappe.ui.form.ControlDate = class CustomControlDate extends frappe.ui.form.Cont
             return null;
         }
     }
+
+    _printDateConversion(){
+        let value = this.get_value();
+            let dateType;
+
+            if(this.df.fieldtype === 'Date') {
+                dateType = TYPE_DATE;
+            } 
+            if (!this.can_write()) {
+                this.$wrapper.find('.ethiopian_date-conversion').html('&nbsp;');
+                return;
+            }
+
+            if (!value) {
+                this.$wrapper.find('.ethiopian_date-conversion').html('&nbsp;');
+            } else {
+                if (this.datepicker_eth) {
+                    this.$wrapper.find('.ethiopian_date-conversion').html(value+' GC');
+                } else {
+                    // const selectedDate = moment(value, this.date_format);
+                    const ethDate = this.get_eth_datepicker_format(value);
+
+                    this.$wrapper.find('.ethiopian_date-conversion').html(ethDate+'  EC');
+                }
+            }
+    }
     
     
 
     refresh() {
         super.refresh();
+        this._printDateConversion();
         if (!this.can_write()) {
             this.$wrapper.find('.ethd_switch_btn').css('display', 'none');
         } else {
